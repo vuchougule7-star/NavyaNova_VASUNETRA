@@ -1,0 +1,67 @@
+{
+  "engine": "core",
+  "job_id": "d54c4cdaee094a72b7d04a315d2b5f7b",
+  "quality": {
+    "before": {
+      "sharpness": 32.3,
+      "resolution": "3072x4096",
+      "usable": false,
+      "issues": [
+        "too blurry"
+      ]
+    },
+    "after": {
+      "sharpness": 31.2,
+      "resolution": "3072x4096",
+      "usable": false,
+      "issues": [
+        "too blurry"
+      ]
+    }
+  },
+  "alignment": {
+    "feature_matches": 2000,
+    "good_matches": 262,
+    "inliers": 155,
+    "alignment_confidence": 59.2
+  },
+  "change": {
+    "total_area_px": 12582912,
+    "changed_area_px": 3069945,
+    "changed_area_pct": 24.4,
+    "significant_regions": 56,
+    "top_regions": [
+      {
+        "area_px": 1552670,
+        "relative_pct": 12.34
+      },
+      {
+        "area_px": 1112115,
+        "relative_pct": 8.84
+      },
+      {
+        "area_px": 162413,
+        "relative_pct": 1.29
+      },
+      {
+        "area_px": 46495,
+        "relative_pct": 0.37
+      },
+      {
+        "area_px": 29461,
+        "relative_pct": 0.23
+      }
+    ]
+  },
+  "evidence_confidence": {
+    "score": 35.5,
+    "label": "LOW"
+  },
+  "files": {
+    "evidence": "/api/jobs/d54c4cdaee094a72b7d04a315d2b5f7b/artifact/core/evidence_report.jpg",
+    "aligned_after": "/api/jobs/d54c4cdaee094a72b7d04a315d2b5f7b/artifact/core/aligned_after.jpg",
+    "change_mask": "/api/jobs/d54c4cdaee094a72b7d04a315d2b5f7b/artifact/core/change_mask.jpg",
+    "change_overlay": "/api/jobs/d54c4cdaee094a72b7d04a315d2b5f7b/artifact/core/change_overlay.jpg",
+    "heatmap": "/api/jobs/d54c4cdaee094a72b7d04a315d2b5f7b/artifact/core/heatmap.jpg"
+  }
+}

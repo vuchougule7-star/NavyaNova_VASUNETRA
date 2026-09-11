@@ -1,0 +1,272 @@
+[
+  {
+    "timestamp": "2026-09-10T22:38:29",
+    "village": "Sialsuk",
+    "action": "Relocation Assessment",
+    "risk_score": 63.22,
+    "recipient_count": 1,
+    "results": [
+      {
+        "recipient_id": "demo-001",
+        "name": "Demo Citizen 1",
+        "phone": "*********9999",
+        "status": "SIMULATED",
+        "provider": "demo",
+        "message": "SMS simulated; Twilio is not configured."
+      }
+    ],
+    "message": "VASUNETRA ALERT: Sialsuk is flagged for relocation assessment (risk 63/100). Follow local authority instructions and be prepared for relocation. Nearest safe zone: Sialsuk Community Relief Centre."
+  },
+  {
+    "timestamp": "2026-09-10T22:35:50",
+    "village": "Sialsuk",
+    "action": "Relocation Assessment",
+    "risk_score": 63.22,
+    "recipient_count": 1,
+    "results": [
+      {
+        "recipient_id": "demo-001",
+        "name": "Demo Citizen 1",
+        "phone": "*********9999",
+        "status": "SIMULATED",
+        "provider": "demo",
+        "message": "SMS simulated; Twilio is not configured."
+      }
+    ],
+    "message": "VASUNETRA ALERT: Sialsuk is flagged for relocation assessment (risk 63/100). Follow local authority instructions and be prepared for relocation. Nearest safe zone: Sialsuk Community Relief Centre."
+  },
+  {
+    "timestamp": "2026-09-10T22:35:27",
+    "village": "Aizawl_Rural1",
+    "action": "Relocation Assessment",
+    "risk_score": 56.48,
+    "recipient_count": 1,
+    "results": [
+      {
+        "recipient_id": "demo-002",
+        "name": "Demo Citizen 2",
+        "phone": "*********9998",
+        "status": "SIMULATED",
+        "provider": "demo",
+        "message": "SMS simulated; Twilio is not configured."
+      }
+    ],
+    "message": "VASUNETRA ALERT: Aizawl_Rural1 is flagged for relocation assessment (risk 56/100). Follow local authority instructions and be prepared for relocation. Nearest safe zone: Aizawl Rural Relief Centre."
+  },
+  {
+    "timestamp": "2026-09-10T22:35:13",
+    "village": "Sialsuk",
+    "action": "Relocation Assessment",
+    "risk_score": 63.22,
+    "recipient_count": 1,
+    "results": [
+      {
+        "recipient_id": "demo-001",
+        "name": "Demo Citizen 1",
+        "phone": "*********9999",
+        "status": "SIMULATED",
+        "provider": "demo",
+        "message": "SMS simulated; Twilio is not configured."
+      }
+    ],
+    "message": "VASUNETRA ALERT: Sialsuk is flagged for relocation assessment (risk 63/100). Follow local authority instructions and be prepared for relocation. Nearest safe zone: Sialsuk Community Relief Centre."
+  },
+  {
+    "timestamp": "2026-09-10T22:35:01",
+    "village": "Aizawl_Rural1",
+    "action": "Relocation Assessment",
+    "risk_score": 56.48,
+    "recipient_count": 1,
+    "results": [
+      {
+        "recipient_id": "demo-002",
+        "name": "Demo Citizen 2",
+        "phone": "*********9998",
+        "status": "SIMULATED",
+        "provider": "demo",
+        "message": "SMS simulated; Twilio is not configured."
+      }
+    ],
+    "message": "VASUNETRA ALERT: Aizawl_Rural1 is flagged for relocation assessment (risk 56/100). Follow local authority instructions and be prepared for relocation. Nearest safe zone: Aizawl Rural Relief Centre."
+  },
+  {
+    "timestamp": "2026-09-10T19:41:52",
+    "village": "Aizawl_Rural1",
+    "action": "Relocation Assessment",
+    "risk_score": 56.48,
+    "recipient_count": 1,
+    "results": [
+      {
+        "recipient_id": "demo-002",
+        "name": "Demo Citizen 2",
+        "phone": "*********9998",
+        "status": "SIMULATED",
+        "provider": "demo",
+        "message": "SMS simulated; Twilio is not configured."
+      }
+    ],
+    "message": "VASUNETRA ALERT: Aizawl_Rural1 is flagged for relocation assessment (risk 56/100). Follow local authority instructions and be prepared for relocation. Nearest safe zone: Aizawl Rural Relief Centre."
+  },
+  {
+    "timestamp": "2026-09-10T19:41:44",
+    "village": "Aizawl_Rural1",
+    "action": "Relocation Assessment",
+    "risk_score": 56.48,
+    "recipient_count": 1,
+    "results": [
+      {
+        "recipient_id": "demo-002",
+        "name": "Demo Citizen 2",
+        "phone": "*********9998",
+        "status": "SIMULATED",
+        "provider": "demo",
+        "message": "SMS simulated; Twilio is not configured."
+      }
+    ],
+    "message": "VASUNETRA ALERT: Aizawl_Rural1 is flagged for relocation assessment (risk 56/100). Follow local authority instructions and be prepared for relocation. Nearest safe zone: Aizawl Rural Relief Centre."
+  },
+  {
+    "timestamp": "2026-09-10T19:41:40",
+    "village": "Sialsuk",
+    "action": "Relocation Assessment",
+    "risk_score": 63.22,
+    "recipient_count": 1,
+    "results": [
+      {
+        "recipient_id": "demo-001",
+        "name": "Demo Citizen 1",
+        "phone": "*********9999",
+        "status": "SIMULATED",
+        "provider": "demo",
+        "message": "SMS simulated; Twilio is not configured."
+      }
+    ],
+    "message": "VASUNETRA ALERT: Sialsuk is flagged for relocation assessment (risk 63/100). Follow local authority instructions and be prepared for relocation. Nearest safe zone: Sialsuk Community Relief Centre."
+  },
+  {
+    "timestamp": "2026-09-10T19:41:37",
+    "village": "Sialsuk",
+    "action": "Relocation Assessment",
+    "risk_score": 63.22,
+    "recipient_count": 1,
+    "results": [
+      {
+        "recipient_id": "demo-001",
+        "name": "Demo Citizen 1",
+        "phone": "*********9999",
+        "status": "SIMULATED",
+        "provider": "demo",
+        "message": "SMS simulated; Twilio is not configured."
+      }
+    ],
+    "message": "VASUNETRA ALERT: Sialsuk is flagged for relocation assessment (risk 63/100). Follow local authority instructions and be prepared for relocation. Nearest safe zone: Sialsuk Community Relief Centre."
+  },
+  {
+    "timestamp": "2026-09-10T19:39:29",
+    "village": "Sialsuk",
+    "action": "Relocation Assessment",
+    "risk_score": 63.22,
+    "recipient_count": 1,
+    "results": [
+      {
+        "recipient_id": "demo-001",
+        "name": "Demo Citizen 1",
+        "phone": "*********9999",
+        "status": "SIMULATED",
+        "provider": "demo",
+        "message": "SMS simulated; Twilio is not configured."
+      }
+    ],
+    "message": "VASUNETRA ALERT: Sialsuk is flagged for relocation assessment (risk 63/100). Follow local authority instructions and be prepared for relocation. Nearest safe zone: Sialsuk Community Relief Centre."
+  },
+  {
+    "timestamp": "2026-09-10T19:39:29",
+    "village": "Sialsuk",
+    "action": "Relocation Assessment",
+    "risk_score": 63.22,
+    "recipient_count": 1,
+    "results": [
+      {
+        "recipient_id": "demo-001",
+        "name": "Demo Citizen 1",
+        "phone": "*********9999",
+        "status": "SIMULATED",
+        "provider": "demo",
+        "message": "SMS simulated; Twilio is not configured."
+      }
+    ],
+    "message": "VASUNETRA ALERT: Sialsuk is flagged for relocation assessment (risk 63/100). Follow local authority instructions and be prepared for relocation. Nearest safe zone: Sialsuk Community Relief Centre."
+  },
+  {
+    "timestamp": "2026-09-10T19:39:28",
+    "village": "Sialsuk",
+    "action": "Relocation Assessment",
+    "risk_score": 63.22,
+    "recipient_count": 1,
+    "results": [
+      {
+        "recipient_id": "demo-001",
+        "name": "Demo Citizen 1",
+        "phone": "*********9999",
+        "status": "SIMULATED",
+        "provider": "demo",
+        "message": "SMS simulated; Twilio is not configured."
+      }
+    ],
+    "message": "VASUNETRA ALERT: Sialsuk is flagged for relocation assessment (risk 63/100). Follow local authority instructions and be prepared for relocation. Nearest safe zone: Sialsuk Community Relief Centre."
+  },
+  {
+    "timestamp": "2026-09-10T19:39:24",
+    "village": "Sialsuk",
+    "action": "Relocation Assessment",
+    "risk_score": 63.22,
+    "recipient_count": 1,
+    "results": [
+      {
+        "recipient_id": "demo-001",
+        "name": "Demo Citizen 1",
+        "phone": "*********9999",
+        "status": "SIMULATED",
+        "provider": "demo",
+        "message": "SMS simulated; Twilio is not configured."
+      }
+    ],
+    "message": "VASUNETRA ALERT: Sialsuk is flagged for relocation assessment (risk 63/100). Follow local authority instructions and be prepared for relocation. Nearest safe zone: Sialsuk Community Relief Centre."
+  },
+  {
+    "timestamp": "2026-09-10T18:43:42",
+    "village": "Sialsuk",
+    "action": "Relocation Assessment",
+    "risk_score": 63.22,
+    "recipient_count": 1,
+    "results": [
+      {
+        "recipient_id": "demo-001",
+        "name": "Demo Citizen 1",
+        "phone": "*********9999",
+        "status": "SIMULATED",
+        "provider": "demo",
+        "message": "SMS simulated; Twilio is not configured."
+      }
+    ],
+    "message": "VASUNETRA ALERT: Sialsuk is flagged for relocation assessment (risk 63/100). Follow local authority instructions and be prepared for relocation. Nearest safe zone: Sialsuk Community Relief Centre."
+  },
+  {
+    "timestamp": "2026-09-10T18:43:11",
+    "village": "Sialsuk",
+    "action": "Relocation Assessment",
+    "risk_score": 63.22,
+    "recipient_count": 1,
+    "results": [
+      {
+        "recipient_id": "demo-001",
+        "name": "Demo Citizen 1",
+        "phone": "*********9999",
+        "status": "SIMULATED",
+        "provider": "demo",
+        "message": "SMS simulated; Twilio is not configured."
+      }
+    ],
+    "message": "VASUNETRA ALERT: Sialsuk is flagged for relocation assessment (risk 63/100). Follow local authority instructions and be prepared for relocation. Nearest safe zone: Sialsuk Community Relief Centre."
+  }
+]

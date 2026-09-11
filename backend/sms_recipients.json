@@ -1,0 +1,16 @@
+[
+  {
+    "id": "demo-001",
+    "name": "Demo Citizen 1",
+    "phone": "+919999999999",
+    "village": "Sialsuk",
+    "active": true
+  },
+  {
+    "id": "demo-002",
+    "name": "Demo Citizen 2",
+    "phone": "+919999999998",
+    "village": "Aizawl_Rural1",
+    "active": true
+  }
+]

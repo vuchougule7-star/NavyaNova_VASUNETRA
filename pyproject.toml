@@ -1,0 +1,13 @@
+[project]
+name = "vasunetra-project"
+version = "1.0.0"
+dependencies = [
+    "fastapi",
+    "pandas",
+    "opencv-python-headless",
+    "python-multipart"
+
+]
+
+[tool.vercel]
+entrypoint = "backend.main:app"

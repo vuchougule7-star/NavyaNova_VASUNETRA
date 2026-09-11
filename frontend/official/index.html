@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vasunetra | Official Dashboard</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header class="topbar">
+
+  <div class="brand">
+    <span class="globe">🌍</span>
+    <span>VASUNETRA</span>
+    <span class="divider">|</span>
+    <span class="subtitle">
+      Official Dashboard — Aizawl District
+    </span>
+  </div>
+
+  <div class="updated" id="updatedText">
+    Updated just now
+  </div>
+
+</header>
+
+
+<main>
+
+  <!-- =====================================================
+       TOP STAT CARDS
+       ===================================================== -->
+  <div class="stats-grid" id="statsGrid"></div>
+
+
+  <!-- =====================================================
+       TOP ROW
+       LEFT  = VILLAGE RISK OVERVIEW
+       RIGHT = RANKED WORKLIST
+       ===================================================== -->
+  <div
+    style="
+      display:grid;
+      grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
+      gap:20px;
+      align-items:start;
+      margin-bottom:0;
+    "
+  >
+
+    <!-- ===================================================
+         VILLAGE RISK OVERVIEW
+         =================================================== -->
+    <div class="panel">
+
+      <div class="kicker">
+        Village Risk Overview
+      </div>
+
+      <h2 class="section-title" style="margin-bottom:2px;">
+        🗺️ Where the risk sits
+      </h2>
+
+      <p
+        style="
+          color:var(--muted);
+          font-size:13px;
+          margin-top:0;
+        "
+      >
+        Tap a village to see its detail and score breakdown.
+        Positions are illustrative — this view will move onto
+        a real map once GPS coordinates are added.
+      </p>
+
+      <div
+        class="village-grid"
+        id="villageGrid"
+      ></div>
+
+      <div class="legend">
+
+        <span>
+          <i style="background:var(--red)"></i>
+          High risk
+        </span>
+
+        <span>
+          <i style="background:var(--amber)"></i>
+          Medium
+        </span>
+
+        <span>
+          <i style="background:var(--green)"></i>
+          Low / stable
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- ===================================================
+         RANKED WORKLIST
+         =================================================== -->
+    <div class="panel">
+
+      <div class="kicker">
+        Ranked Worklist
+      </div>
+
+      <h2 class="section-title">
+        📋 Villages by priority
+      </h2>
+
+      <div style="overflow-x:auto;">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Village</th>
+              <th>Risk</th>
+              <th>Recommended action</th>
+              <th>High pop.</th>
+            </tr>
+          </thead>
+
+          <tbody id="worklistBody"></tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       LEFT  = DETAIL
+       RIGHT = WHAT-IF + TERRAIN
+       ===================================================== -->
+  <div
+    style="
+      display:grid;
+      grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
+      gap:20px;
+      align-items:start;
+    "
+  >
+
+    <!-- ===================================================
+         LEFT COLUMN
+         =================================================== -->
+    <div>
+
+      <!-- Village Detail -->
+      <div
+        class="panel"
+        id="detailPanel"
+      ></div>
+
+
+      <!-- Carrying Capacity -->
+      <div class="panel">
+
+        <div class="kicker">
+          Carrying Capacity
+        </div>
+
+        <h2 class="section-title">
+          🏠 Relocation pressure
+        </h2>
+
+        <div
+          id="capacityPanel"
+          class="capacity-grid"
+        ></div>
+
+      </div>
+
+
+      <!-- Latest Evidence -->
+      <div class="panel">
+
+        <div class="kicker">
+          Latest Evidence
+        </div>
+
+        <h2 class="section-title">
+          📷 Field analysis
+        </h2>
+
+        <div
+          id="evidencePanel"
+          class="evidence-panel"
+        >
+          <p
+            style="
+              color:var(--muted);
+              font-size:13px;
+            "
+          >
+            No field analysis has been submitted in this session.
+          </p>
+        </div>
+
+        <a
+          class="dashboard-btn"
+          href="/field/"
+        >
+          Open Field Analysis →
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- ===================================================
+         RIGHT COLUMN
+         =================================================== -->
+    <div>
+
+      <!-- =================================================
+           WHAT-IF SIMULATION
+           ================================================= -->
+      <div class="panel">
+
+        <div class="kicker">
+          What-If Simulation
+        </div>
+
+        <h2 class="section-title">
+          🧪 Scenario Simulator
+        </h2>
+
+
+        <!-- Village -->
+        <label
+          style="
+            display:flex;
+            flex-direction:column;
+            gap:6px;
+            color:var(--muted);
+            font-size:12px;
+            font-weight:600;
+          "
+        >
+
+          Village
+
+          <select
+            id="qaVillage"
+            style="
+              padding:10px 12px;
+              border:1px solid var(--border);
+              border-radius:8px;
+              background:#fff;
+              color:var(--text);
+              font:inherit;
+            "
+          >
+          </select>
+
+        </label>
+
+
+        <!-- Scenario -->
+        <label
+          style="
+            display:flex;
+            flex-direction:column;
+            gap:6px;
+            color:var(--muted);
+            font-size:12px;
+            font-weight:600;
+            margin-top:10px;
+          "
+        >
+
+          Scenario
+
+          <select
+            id="qaFactor"
+            style="
+              padding:10px 12px;
+              border:1px solid var(--border);
+              border-radius:8px;
+              background:#fff;
+              color:var(--text);
+              font:inherit;
+            "
+          >
+
+            <option value="drainage">
+              Drainage improvement
+            </option>
+
+            <option value="slope">
+              Slope stabilization
+            </option>
+
+            <option value="access">
+              Access improvement
+            </option>
+
+            <option value="population">
+              Population change
+            </option>
+
+          </select>
+
+        </label>
+
+
+        <!-- Change -->
+        <label
+          style="
+            display:flex;
+            flex-direction:column;
+            gap:6px;
+            color:var(--muted);
+            font-size:12px;
+            font-weight:600;
+            margin-top:10px;
+          "
+        >
+
+          Change (%)
+
+          <input
+            id="qaValue"
+            type="number"
+            value="30"
+            min="0"
+            max="100"
+            style="
+              padding:10px 12px;
+              border:1px solid var(--border);
+              border-radius:8px;
+              font:inherit;
+            "
+          >
+
+        </label>
+
+
+        <!-- Buttons -->
+        <div
+          style="
+            display:flex;
+            gap:8px;
+            margin-top:12px;
+          "
+        >
+
+          <button
+            id="qaAskBtn"
+            type="button"
+            style="
+              padding:10px 16px;
+              border:0;
+              border-radius:8px;
+              background:var(--navy);
+              color:#fff;
+              font:inherit;
+              font-weight:600;
+              cursor:pointer;
+            "
+          >
+            Ask
+          </button>
+
+
+          <button
+            id="qaResetBtn"
+            type="button"
+            style="
+              padding:10px 16px;
+              border:1px solid var(--border);
+              border-radius:8px;
+              background:#fff;
+              color:var(--text);
+              font:inherit;
+              font-weight:600;
+              cursor:pointer;
+            "
+          >
+            Reset
+          </button>
+
+        </div>
+
+
+        <!-- Answer -->
+        <div
+          id="qaAnswer"
+          style="
+            margin-top:14px;
+            padding:12px;
+            border-radius:8px;
+            background:#f8fafc;
+          "
+        >
+          <span style="color:var(--muted);">
+            Choose a village and a scenario, then click Ask.
+          </span>
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           TERRAIN VISUALIZATION
+           ================================================= -->
+      <div class="panel">
+
+        <div class="kicker">
+          Terrain Visualization
+        </div>
+
+        <h2 class="section-title">
+          🏔️ Terrain & Hazard Profile
+        </h2>
+
+        <canvas
+          id="terrainChartCanvas"
+          height="180"
+        ></canvas>
+
+        <p
+          style="
+            font-size:11px;
+            color:var(--muted);
+            margin-top:6px;
+          "
+        >
+          Illustrative terrain profile generated from this
+          village's actual slope and hazard score — not surveyed
+          elevation data.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       ACTIVE ALERTS
+       ===================================================== -->
+  <div class="panel">
+
+    <div class="kicker">
+      Active Alerts
+    </div>
+
+    <h2 class="section-title">
+      🚨 Attention required
+    </h2>
+
+    <div
+      id="alertsPanel"
+      class="alerts-list"
+    >
+      <p
+        style="
+          color:var(--muted);
+          font-size:13px;
+        "
+      >
+        Loading alerts…
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       SMS ALERT CENTER
+       ===================================================== -->
+  <div
+    class="panel"
+    id="smsAlertPanel"
+  >
+
+    <div class="kicker">
+      SMS Alert Center
+    </div>
+
+    <h2 class="section-title">
+      📱 Citizen SMS Alerts
+    </h2>
+
+    <p
+      style="
+        color:var(--muted);
+        font-size:13px;
+        margin:0 0 14px;
+      "
+    >
+      Send a priority safety alert to registered citizens
+      for the selected habitation. Demo mode is used unless
+      a real SMS provider is configured.
+    </p>
+
+
+    <div
+      style="
+        display:grid;
+        grid-template-columns:minmax(180px,1fr) auto;
+        gap:12px;
+        align-items:end;
+      "
+    >
+
+      <label
+        style="
+          display:flex;
+          flex-direction:column;
+          gap:6px;
+          color:var(--muted);
+          font-size:12px;
+          font-weight:600;
+        "
+      >
+
+        Village
+
+        <select
+          id="smsVillage"
+          style="
+            width:100%;
+            padding:10px 12px;
+            border:1px solid var(--border);
+            border-radius:8px;
+            background:#fff;
+            color:var(--text);
+            font:inherit;
+            min-height:40px;
+          "
+        >
+
+          <option value="Sialsuk">
+            Sialsuk
+          </option>
+
+          <option value="Aizawl_Rural1">
+            Aizawl Rural1
+          </option>
+
+          <option value="Lungdai">
+            Lungdai
+          </option>
+
+          <option value="Zohmun">
+            Zohmun
+          </option>
+
+          <option value="Thenzawl">
+            Thenzawl
+          </option>
+
+          <option value="Aizawl_Rural2">
+            Aizawl Rural2
+          </option>
+
+          <option value="Reiek">
+            Reiek
+          </option>
+
+        </select>
+
+      </label>
+
+
+      <button
+        id="sendSmsButton"
+        type="button"
+        style="
+          padding:10px 16px;
+          border:0;
+          border-radius:8px;
+          background:var(--navy);
+          color:#fff;
+          font:inherit;
+          font-weight:600;
+          cursor:pointer;
+        "
+      >
+        Send SMS Alert
+      </button>
+
+    </div>
+
+
+    <!-- SMS Metrics -->
+    <div
+      style="
+        display:grid;
+        grid-template-columns:repeat(3,minmax(120px,1fr));
+        gap:10px;
+        margin-top:12px;
+      "
+    >
+
+      <div class="sms-metric">
+
+        <span>
+          Selected village
+        </span>
+
+        <strong id="smsSelectedVillage">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="sms-metric">
+
+        <span>
+          Registered recipients
+        </span>
+
+        <strong id="smsRecipientCount">
+          —
+        </strong>
+
+      </div>
+
+
+      <div class="sms-metric">
+
+        <span>
+          SMS mode
+        </span>
+
+        <strong id="smsMode">
+          SIMULATION
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <div
+      id="smsRecipientInfo"
+      style="
+        margin-top:10px;
+        color:var(--muted);
+        font-size:12px;
+      "
+    >
+      Loading registered recipients…
+    </div>
+
+
+    <div
+      id="smsStatus"
+      style="
+        margin-top:10px;
+        color:var(--muted);
+        font-size:13px;
+      "
+    ></div>
+
+
+    <!-- SMS Logs -->
+    <div
+      style="
+        margin-top:16px;
+        border-top:1px solid var(--border);
+        padding-top:12px;
+      "
+    >
+
+      <div
+        style="
+          color:var(--muted);
+          font-size:11px;
+          font-weight:700;
+          text-transform:uppercase;
+          letter-spacing:.5px;
+          margin-bottom:8px;
+        "
+      >
+        Recent SMS Log
+      </div>
+
+      <div
+        id="smsLogs"
+        style="
+          display:grid;
+          gap:7px;
+        "
+      >
+        <span
+          style="
+            color:var(--muted);
+            font-size:12px;
+          "
+        >
+          Loading…
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       SYSTEM STATUS
+       ===================================================== -->
+  <div class="panel">
+
+    <div class="kicker">
+      System Status
+    </div>
+
+    <div
+      id="systemStatus"
+      style="
+        color:var(--muted);
+        font-size:13px;
+      "
+    >
+      Checking backend and latest analysis…
+    </div>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="fbrand">
+    🌍 VASUNETRA
+  </div>
+
+  Disaster Management Decision-Support System ·
+  Official View · Prototype · SIH 2026
+
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
