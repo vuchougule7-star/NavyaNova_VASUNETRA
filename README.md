@@ -1,6 +1,6 @@
-# Vasunetra – Intelligent Disaster Risk Decision-Support System
+# Intelligent Disaster Risk Decision-Support System
 
-**SIH26191 – Intelligent Identification of Hazard-Based Red Zones, Carrying Capacity Assessment, and Immediate Relocation Needs for Vulnerable Habitations**
+** Intelligent Identification of Hazard-Based Red Zones, Carrying Capacity Assessment, and Immediate Relocation Needs for Vulnerable Habitations**
 
 Vasunetra is an intelligent disaster-risk decision-support prototype designed to help identify potentially hazardous areas, assess vulnerability and shelter capacity, and prioritise relocation needs for vulnerable habitations.
 
@@ -186,8 +186,6 @@ Image-based change detection identifies visible differences between photographs;
 ## Project Information
 
 - **Project Name:** Vasunetra
-- **Team:** NavyaNova
-- **Challenge ID:** SIH26191
 - **Project Type:** Intelligent Disaster Risk Decision-Support Prototype
 
 ---
